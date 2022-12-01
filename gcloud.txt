@@ -1,0 +1,14 @@
+env\Scripts\activate.bat
+gcloud --quiet --project agile-team-296603 app deploy app.yaml
+
+m.save(os.getcwd()+'current1.html')
+C:\Users\PCUser\AppData\Local\Programs\Python\Python38
+
+gcloud beta compute ssl-certificates describe 
+gcloud compute target-https-proxies describe 
+firebase init hosting
+gcloud config set project responsive-icon-299521
+gcloud builds submit --tag gcr.io/responsive-icon-299521/hello	
+gcloud run deploy --image gcr.io/responsive-icon-299521/hello --platform managed --region=asia-northeast1
+
+                                                                                                                                                                            

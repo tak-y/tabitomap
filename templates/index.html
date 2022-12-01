@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSZS9N8RFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XSZS9N8RFN');
+  </script>
+  <body>
+    <head>
+      <title>旅行記のリンクを地図で見える化-Tabi_Map-</title>
+    </head>
+    <h1>Tabi_map（タビマップ）</h1>
+    <p font-size=8px>このサイトは、旅行した場所を記事のリンク付きで地図に可視化します。</p>
+    <br>
+    <p font-size=8px>ブロガーの皆さん、もしよければ、地図という形で記事へ誘導されるという方法をぜひお試しください。</p>
+    <p></p>
+    <h2>使い方</h2>
+    <p>１．「ファイルを選択」からxlsxファイルをアップロードしてください</p>
+    <p>注意・・・以下のように、「可視化したい地点の名前（紹介場所）」、「可視化したいデータの値の名前（リンク）」をシートの1行目に入れてください。</p>
+    <div style="text-align:center">
+      <img src = "{{url_for('static', filename='ex.jpg')}}" width="500" height="100"></img>
+    </div>
+    <hr>
+    <form method=post enctype=multipart/form-data action="/visual">
+      <input type=file name=file>
+      <br>
+      <br>
+      <p><b>可視化したいデータの名前</b>をそのまま入力してください（コピペが確実と思われます）</p>
+      <label><input type="text" name="data" value=""></label>
+      <br>
+      <p><b>可視化したい地点の名前</b>をそのまま入力してください（コピペが確実と思われます）</p>
+      <label><input type="text" name="name" value=""></label>
+      <br>
+      <input type=submit value="見える化">
+    </form>
+    <p>今後は、もっといろんな可視化ができるように機能を拡充していきます。</p>
+    <div class="link" style="text-align:center" style="width:85%;">
+      <p class="link"><font size="4px">こんな機能が欲しいといったご要望はこちらまでお問い合わせください。</font></p>
+      <p><font size="4px">・・・・・<a class="link" href="mailto:u-rib@u-rib.com">u-rib@u-rib.com</a>・・・・・</font></p>
+    </div>
+  </body>
+</html>
