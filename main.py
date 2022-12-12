@@ -32,24 +32,11 @@ def visual():
         file.save(os.path.join('upload', filename))
         if filename.split('.')[1] in allowed_ext:
 
-            flash('ファイルがアップされました')
+            flash('file upload')
             wb=openpyxl.load_workbook(file)
             ws = wb["Sheet1"]
             popup = str(request.form['name'])
             link = str(request.form['data'])
-            #if bool(circle) == True:
-                #data = str(request.form['data'])
-                #dim = str(request.form['dim'])
-                #div = int(request.form['div'])
-                #m = folium.Map(location=[df["緯度"][1],df["経度"][1]],zoom_start=13)
-                #for i in range(1,len(df)-1):
-                    #print(df[data][i])
-                    #folium.Circle(location=[df["緯度"][i],df["経度"][i]],radius=int(df[data][i])/div,color="blue",fill_color=False,popup=str(df[data][i])+dim,tooltip=str(df[name][i])).add_to(m)
-
-
-                #m.save('C:/Users/tkgle/OneDrive/デスクトップ/data_visualization/static/data_r.html')
-                #os.remove(os.path.join('upload', filename))
-                #return render_template('visual.html')
             num = math.floor((ws.max_row-1)/2)+1
             print('saidai'+str(ws.max_row))
 
@@ -85,7 +72,6 @@ def visual():
                         pop=str(ws.cell(row=cell.row,column=1).value)
 
                         html='<a href ="{url}" target="_blank" rel="noopener noreferrer">{pop}</a>'.format(url=url,pop=pop)
-                        # ポップアップの設定・設置
                         iframe = branca.element.IFrame(html=html, width=300, height=100)
                         popup = folium.Popup(iframe, max_width=300,show=True)
                             
@@ -94,11 +80,7 @@ def visual():
                     else:
                         break
 
-                    #elif bool(density) == True:
-                    #m = folium.Map(location=[df["緯度"][1],df["経度"][1]],zoom_start=13)
-                    #cluster = plugins.MarkerCluster().add_to(m)
-                        #for i in range(1,len(df)-1):
-                           #folium.CircleMarker(location=[df["緯度"][i],df["経度"][i]],color="blue",fill_color=False,tooltip=str(df[name][i])).add_to(cluster)
+
             return render_template('visual.html')
 
         else:
