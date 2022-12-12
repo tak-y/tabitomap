@@ -11,6 +11,8 @@ import branca
 import math
 import openpyxl
 import geocoder
+import sys, os
+sys.path.insert(0, '/var/www/html')
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
